@@ -1,0 +1,14 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+crewai = "==0.28.8"
+crewai-tools = "==0.1.6"
+langchain-community = "==0.0.29"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
