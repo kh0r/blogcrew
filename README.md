@@ -21,5 +21,5 @@ pipenv install
 ## Run
 
 ```bash
-pipenv run main.py -t "How to generate blogposts using CrewAI and Ollama"
+pipenv run python main.py -t "How to generate blogposts using CrewAI and Ollama"
 ```

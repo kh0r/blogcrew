@@ -3,6 +3,10 @@ import argparse
 
 from langchain_openai import ChatOpenAI
 from crewai import Agent, Task, Crew
+from crewai_tools import (
+    SerperDevTool,
+    WebsiteSearchTool
+)
 
 os.environ["OPENAI_API_KEY"] = "NA"
 
@@ -15,6 +19,9 @@ llm = ChatOpenAI(
     model = "crewai-llama3",
     base_url = "http://localhost:11434/v1")
 
+
+search_tool = SerperDevTool()
+web_rag_tool = WebsiteSearchTool()
 
 planner = Agent(
     role="Content Planner",
@@ -30,6 +37,7 @@ planner = Agent(
               "Your work is the basis for "
               "the Content Writer to write an article on this topic.",
     llm=llm,
+    tools=[search_tool, web_rag_tool],
     allow_delegation=False,
  verbose=True
 )
